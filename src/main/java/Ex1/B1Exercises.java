@@ -71,7 +71,6 @@ public class B1Exercises {
 
         //Cach 1: convert to int array
         int[] array2=new int[convertedString.length()];
-
         for (int j=0;j<convertedString.length();j++){
             array2[j]=Character.getNumericValue(convertedString.charAt(j));
         }
@@ -88,7 +87,7 @@ public class B1Exercises {
         }
         System.out.println(Arrays.toString(array4));
 
-        
+
     }
 
 
