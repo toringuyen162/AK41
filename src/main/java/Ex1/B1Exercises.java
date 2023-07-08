@@ -1,13 +1,10 @@
 package Ex1;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class B1Exercises {
     public static void main(String[] args) {
-
+    cal();
     }
 
 
@@ -60,13 +57,28 @@ public class B1Exercises {
         System.out.println(max);
     }
 
-    public static int cal(){
-        int[] array = {1, 2,3,5};
-        StringBuilder sb =new StringBuilder();
-        
+
+    //Baitap6
+    public static void cal() {
+        int[] array = {1, 2, 3, 5};
+        StringBuilder sb = new StringBuilder();
         for (int i : array) {
-            sb.append(i);
+            sb.append(i);//convert int to string then append to Object sb
         }
-        return Integer.getInteger(sb.toString());
+        int calculatedInt = Integer.parseInt(sb.toString()) + 1; //sb to int variable then +1
+
+        String convertedString = Integer.toString(calculatedInt); //convert int variable to String
+
+        //convert string to array
+        int[] array2=new int[convertedString.length()];
+        for (int j=0;j<convertedString.length();j++){
+            array2[j]=Character.getNumericValue(convertedString.charAt(j));
+        }
+        System.out.println(Arrays.toString(array2));
+
     }
+
+
+
 }
+
