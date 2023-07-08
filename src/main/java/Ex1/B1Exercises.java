@@ -69,13 +69,26 @@ public class B1Exercises {
 
         String convertedString = Integer.toString(calculatedInt); //convert int variable to String
 
-        //convert string to array
+        //Cach 1: convert to int array
         int[] array2=new int[convertedString.length()];
+
         for (int j=0;j<convertedString.length();j++){
             array2[j]=Character.getNumericValue(convertedString.charAt(j));
         }
         System.out.println(Arrays.toString(array2));
 
+        //Cach 2: convert to char array
+        char[]array3 = convertedString.toCharArray();
+        System.out.println(Arrays.toString(array3));
+
+        //Cach 3: convert to String array
+        String[] array4 = new String[convertedString.length()];
+        for(int k =0;k<convertedString.length();k++){
+            array4[k]= String.valueOf(convertedString.charAt(k));
+        }
+        System.out.println(Arrays.toString(array4));
+
+        
     }
 
 
