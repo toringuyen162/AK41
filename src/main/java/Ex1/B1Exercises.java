@@ -61,13 +61,18 @@ public class B1Exercises {
     //Baitap6
     public static void cal() {
         int[] array = {1, 2, 3, 5};
-        StringBuilder sb = new StringBuilder();
-        for (int i : array) {
-            sb.append(i);//convert int to string then append to Object sb
-        }
-        int calculatedInt = Integer.parseInt(sb.toString()) + 1; //sb to int variable then +1
+//        StringBuilder sb = new StringBuilder();
+//        for (int i : array) {
+//            sb.append(i);//convert int to string then append to Object sb
+//        }
+//        int calculatedInt = Integer.parseInt(sb.toString()) + 1; //sb to int variable then +1
 
-        String convertedString = Integer.toString(calculatedInt); //convert int variable to String
+        String str = "";
+        for (int i:array){
+            str += String.valueOf(i);
+        }
+
+        String convertedString = Integer.toString(Integer.parseInt(str)+1); //convert int variable to String
 
         //Cach 1: convert to int array
         int[] array2=new int[convertedString.length()];
