@@ -60,7 +60,7 @@ public class B1Exercises {
 
     //Baitap6
     public static void cal() {
-        int[] array = {0, 2, 3, 5};
+        int[] array = {0, 0, 9, 9, 9};
 //        StringBuilder sb = new StringBuilder();
 //        for (int i : array) {
 //            sb.append(i);//convert int to string then append to Object sb
@@ -73,15 +73,15 @@ public class B1Exercises {
         }
 
         int convertNum = Integer.parseInt(str) + 1; //convert int variable to String
-        String formatString = String.format("%0"+array.length+"d",convertNum);
+        String formatString = String.format("%0" + array.length + "d", convertNum);
 
-        //Cach 1: convert to int array
+
         int[] array2 = new int[array.length];
-        for (int i=0;i<array.length;i++) {
+        for (int i = 0; i < array.length; i++) {
             array2[i] = Integer.parseInt(String.valueOf(formatString.charAt(i)));
         }
         System.out.println(Arrays.toString(array2));
 
+
     }
 }
-
