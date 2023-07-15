@@ -1,12 +1,10 @@
 package Ex1;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.SortedMap;
 
 public class B1Exercises {
-    public static void main(String[] args) {
-        cal();
-    }
-
 
     public static void isEvenOdd(int n) {
         if (n <= 0) {
@@ -59,29 +57,42 @@ public class B1Exercises {
 
 
     //Baitap6
-    public static void cal() {
-        int[] array = {0, 0, 9, 9, 9};
+    public static int[] cal(int[] arr) {
 //        StringBuilder sb = new StringBuilder();
 //        for (int i : array) {
 //            sb.append(i);//convert int to string then append to Object sb
 //        }
 //        int calculatedInt = Integer.parseInt(sb.toString()) + 1; //sb to int variable then +1
+        for (int i : arr) {
+            if (i >= 10 || i < 0) {
+                throw new IllegalArgumentException("Input không hợp lệ");
+            }
+        }
 
         String str = "";
-        for (int i : array) {
+        for (int i : arr) {
             str += String.valueOf(i);
         }
 
-        int convertNum = Integer.parseInt(str) + 1; //convert int variable to String
-        String formatString = String.format("%0" + array.length + "d", convertNum);
+        int convertNum = Integer.parseInt(str) + 1;
+        //convert int variable to String
+        String formatString = String.format("%0" + arr.length + "d", convertNum);
 
+        int[] newArr2 = new int[0];
+        if (formatString.length() == arr.length) {
+            int[] newArr = new int[formatString.length()];
+            for (int i = 0; i < formatString.length(); i++) {
+                newArr[i] = Character.getNumericValue(formatString.charAt(i));
+            }
+            return newArr;
+        } else if (formatString.length() == arr.length + 1) {
+            newArr2 = new int[formatString.length() + 1];
+            for (int i = 0; i < formatString.length() + 1; i++) {
+                newArr2[i] = Character.getNumericValue(formatString.charAt(i));
+            }
 
-        int[] array2 = new int[array.length];
-        for (int i = 0; i < array.length; i++) {
-            array2[i] = Integer.parseInt(String.valueOf(formatString.charAt(i)));
         }
-        System.out.println(Arrays.toString(array2));
-
-
+        return newArr2;
     }
+
 }
