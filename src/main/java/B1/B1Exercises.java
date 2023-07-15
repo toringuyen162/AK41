@@ -1,8 +1,4 @@
-package Ex1;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.SortedMap;
+package B1;
 
 public class B1Exercises {
 
@@ -78,21 +74,14 @@ public class B1Exercises {
         //convert int variable to String
         String formatString = String.format("%0" + arr.length + "d", convertNum);
 
-        int[] newArr2 = new int[0];
-        if (formatString.length() == arr.length) {
-            int[] newArr = new int[formatString.length()];
-            for (int i = 0; i < formatString.length(); i++) {
-                newArr[i] = Character.getNumericValue(formatString.charAt(i));
-            }
-            return newArr;
-        } else if (formatString.length() == arr.length + 1) {
-            newArr2 = new int[formatString.length() + 1];
-            for (int i = 0; i < formatString.length() + 1; i++) {
-                newArr2[i] = Character.getNumericValue(formatString.charAt(i));
-            }
 
+        int[] newArr = new int[formatString.length()];
+        for (int i = 0; i < formatString.length(); i++) {
+            newArr[i] = Character.getNumericValue(formatString.charAt(i));
         }
-        return newArr2;
-    }
+        return newArr;
 
+    }
 }
+
+
