@@ -72,7 +72,7 @@ public class B1Exercises {
 
         int convertNum = Integer.parseInt(str) + 1;
         //convert int variable to String
-        String formatString = String.format("%0" + arr.length + "d", convertNum);
+        String formatString = String.format("%0" + Integer.toString(convertNum).length() + "d", convertNum);
 
 
         int[] newArr = new int[formatString.length()];
