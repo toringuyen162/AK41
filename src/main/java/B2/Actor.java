@@ -29,6 +29,46 @@ public class Actor {
         return name;
     }
 
+    public int getHeight() {
+        return height;
+    }
+
+    public int getMass() {
+        return mass;
+    }
+
+    public String getHairColor() {
+        return hairColor;
+    }
+
+    public String getSkinColor() {
+        return skinColor;
+    }
+
+    public String getEyeColor() {
+        return eyeColor;
+    }
+
+    public String getBirthYear() {
+        return birthYear;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void info(){
+        System.out.printf("name: %s\n",this.name);
+        System.out.printf("height: %d\n",this.height);
+        System.out.printf("mass: %d\n",this.mass);
+        System.out.printf("hair_color: %s\n",this.hairColor);
+        System.out.printf("skin_color: %s\n",this.skinColor);
+        System.out.printf("eye_color: %s\n",this.eyeColor);
+        System.out.printf("birth_year: %s\n",this.birthYear);
+        System.out.printf("gender: %s\n",this.gender);
+        System.out.println("--------------------------");
+
+    }
     public static void main(String[] args) {
         List<Actor> actors = new ArrayList<Actor>();
         actors.add(new Actor("Luke Skywalker", 172, 77, "blond", "fair", "blue", "19BBY", "male"));
@@ -40,6 +80,12 @@ public class Actor {
         actors.add(new Actor("Obi-Wan Kenobi", 182, 77, "auburn, white", "fair", "blue-gray", "57BBY", "male"));
 
         List<String> actorNames = actors.stream().map(Actor::getName).collect((Collectors.toList()));
+        List <Actor> actorHasMassGreater100 =
+                actors
+                .stream()
+                .filter(Actor -> Actor.getMass()>100)
+                .collect(Collectors.toList());
 
+        actorHasMassGreater100.forEach(Actor::info);
     }
 }
